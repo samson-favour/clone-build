@@ -16,7 +16,7 @@ const DateRanpicker = () => {
     <Datepicker
       value={value}
       onChange={handleValueChange}
-      showShortcuts={true}
+      showShortcuts={false}
     />
   );
 };
