@@ -5,18 +5,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Moment from "moment";
 import InfoCard from "../components/InfoCard";
-import { AnyCnameRecord } from "dns";
-
+import MapView from "../components/Map";
 const Search = ({ searchResult }: any) => {
-  console.log(searchResult);
-
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
 
   const formattedStartDate = Moment(startDate).format("Do MMM YYYY");
   const formattedEndDate = Moment(endDate).format("Do MMM YYYY");
-
-  console.log(formattedStartDate);
 
   const range = `${formattedStartDate} - ${formattedEndDate}`;
   return (
@@ -26,7 +21,7 @@ const Search = ({ searchResult }: any) => {
         <link rel="icon" href="/favicon.ico" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"  />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;900&display=swap"
           rel="stylesheet"
@@ -34,7 +29,7 @@ const Search = ({ searchResult }: any) => {
       </Head>
 
       <Header />
-      <main className="flex">
+      <main className=" xl:flex">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
             300+ Stays - {range} - for {numOfGuests} number of guests
@@ -55,6 +50,10 @@ const Search = ({ searchResult }: any) => {
               <InfoCard {...item} />
             ))}
           </div>
+        </section>
+
+        <section className="hidden xl:inline-flex xl:min-w-[600px]">
+          <MapView searchResults={searchResult} />
         </section>
       </main>
 
