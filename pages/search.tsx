@@ -5,8 +5,9 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Moment from "moment";
 import InfoCard from "../components/InfoCard";
+import { AnyCnameRecord } from "dns";
 
-const Search = ({ searchResult }) => {
+const Search = ({ searchResult }: any) => {
   console.log(searchResult);
 
   const router = useRouter();
@@ -25,7 +26,7 @@ const Search = ({ searchResult }) => {
         <link rel="icon" href="/favicon.ico" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com"  />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;900&display=swap"
           rel="stylesheet"
@@ -50,7 +51,7 @@ const Search = ({ searchResult }) => {
             <p className="button"> More filters</p>
           </div>
           <div className="flex flex-col">
-            {searchResult.map((item) => (
+            {searchResult.map((item: any) => (
               <InfoCard {...item} />
             ))}
           </div>
