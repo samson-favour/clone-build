@@ -93,7 +93,7 @@ const Header = () => {
           <Datepicker
             value={value}
             onChange={handleValueChange}
-            showShortcuts={true}
+            showShortcuts={false}
           />
         </div>
 
