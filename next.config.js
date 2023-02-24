@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["links.papareact.com", "ogle.com", "https://ogle.ng"],
+    domains: ["links.papareact.com", "ogle.ng", "https://ogle.ng"],
   },
 };
