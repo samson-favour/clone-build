@@ -8,7 +8,7 @@ const AutoFillInput = () => {
       accessToken={accessToken}
       options={{
         language: "en",
-        country: "NG",
+        country: "US",
       }}
     >
       <input
