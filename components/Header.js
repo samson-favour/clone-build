@@ -52,7 +52,7 @@ const Header = () => {
     });
   };
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-white shadow-md p-5 md:px-10">
+    <header className="sticky top-0 z-50  flex items-center justify-center  lg:justify-between bg-white shadow-md p-5 md:px-10">
       <div
         onClick={() => {
           router.push("/");
@@ -69,7 +69,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="shadow-lg ml-0 xl:ml-16  bg-white rounded-full items-center justify-between flex flex-row border border-gray-50">
+      <div className="shadow-lg ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
         <div>
           <input
             value={searchInput}
@@ -82,8 +82,20 @@ const Header = () => {
 
         <div className="h-6 w-[1px]  bg-gray-300" />
 
-        <div className="max-w-[150px] ">
+        <div className="max-w-[150px] hidden lg:block">
           <Datepicker
+            value={value}
+            onChange={handleValueChange}
+            inputClassName="border-none focus:ring-0 focus:border-none"
+            toggleClassName="border-none focus:ring-0 focus:border-none"
+            showShortcuts={false}
+            minDate={d}
+          />
+        </div>
+
+        <div className="max-w-[150px] block lg:hidden">
+          <Datepicker
+            useRange={false}
             value={value}
             onChange={handleValueChange}
             inputClassName="border-none focus:ring-0 focus:border-none"

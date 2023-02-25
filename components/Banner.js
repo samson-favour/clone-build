@@ -10,8 +10,8 @@ const Banner = () => {
           objectFit="cover"
           objectPosition="left"
         />
-        <div className=" z-20 absolute top-[200px] w-full text-center">
-          <p className="text-white font-bold text-5xl">
+        <div className=" z-20 absolute top-20 lg:top-[200px] w-full text-center">
+          <p className="text-white font-bold text-2xl lg:text-5xl">
             Find the home of your dreams on <br /> Ogle
           </p>
           <p className="text-sm text-white sm:text-lg">

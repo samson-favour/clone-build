@@ -13,8 +13,8 @@ const InfoCard = ({
   price,
 }) => {
   return (
-    <div className="flex py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg pr-4 transition duration-200 ease-out first:border-t ">
-      <div className="relative  h-24 w-40 md:h-52 md:w-80 flex flex-shrink-0">
+    <div className="flex flex-col sm:flex-row  py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg pr-4 transition duration-200 ease-out first:border-t ">
+      <div className="relative h-40 w-full  sm:h-40 sm:w-64 md:h-52 md:w-80 flex flex-shrink-0">
         <Image
           src={img}
           layout="fill"
@@ -24,7 +24,7 @@ const InfoCard = ({
         />
       </div>
 
-      <div className="flex flex-col flex-grow pl-5">
+      <div className="flex flex-col flex-grow pt-4 sm:pt-0 sm:pl-5">
         <div className="flex justify-between">
           <p>{location}</p>
           <HeartIcon className="h-5 cursor-pointer" />
