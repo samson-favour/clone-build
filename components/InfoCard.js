@@ -36,7 +36,7 @@ const InfoCard = ({
         <p className="pt-2 text-sm text-gray-500 flex-grow ">{description}</p>
         <div className="flex justify-between items-end pt-5">
           <p className="flex  items-center">
-            <StarIcon className="h-5 text-red-400" />
+            <StarIcon className="h-5 text-[#3270FC]" />
             {star}
           </p>
 
