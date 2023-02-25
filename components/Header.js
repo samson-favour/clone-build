@@ -1,8 +1,13 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { AddressAutofill } from "@mapbox/search-js-react";
 
- const accessToken = process.env.mapbox_key;
+import dynamic from "next/dynamic";
+
+const SearchInput = dynamic(() => import("../components/AutoFillInput"), {
+  ssr: false,
+});
+
+
 import {
   SearchIcon,
   GlobeAltIcon,
@@ -74,21 +79,7 @@ const Header = () => {
 
       <div className="shadow-lg ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
         <div>
-          <AddressAutofill
-            accessToken={accessToken}
-            options={{
-              language: "en",
-              country: "NG",
-            }}
-          >
-            <input
-              placeholder="Location"
-              name="address"
-              type="text"
-              autoComplete="street-address"
-              className="max-w-[130px] rounded-full focus:border-none focus:ring-0 flex-shrink flex border-none overflow-hidden"
-            />
-          </AddressAutofill>
+        <SearchInput />
           {/* <input
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
