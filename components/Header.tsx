@@ -175,56 +175,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* {showRegModal ? (
-        <>
-          <div className="transition transform ease-out duration-300 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">Modal Title</h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowRegModal(false)}
-                  >
-                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      ×
-                    </span>
-                  </button>
-                </div>
-                <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    I always felt like I could do anything. That’s the main
-                    thing people are controlled by! Thoughts- their perception
-                    of themselves! They're slowed down by their perception of
-                    themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
-                  </p>
-                </div>
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowRegModal(false)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowRegModal(false)}
-                  >
-                    Save Changes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null} */}
-
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50 " onClose={closeModal}>
+        <Dialog as="div" className="relative z-50  " onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -234,11 +186,11 @@ const Header = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-80" />
+            <div className="fixed inset-0 bg-black bg-opacity-80 " />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex  z-50 min-h-full max-w-[800px] h-[626px] mx-auto items-center justify-center p-4 text-center">
+          <div className="fixed inset-0 overflow-y-auto scrollbar-hide">
+            <div className="flex scrollbar-hide z-50 min-h-full max-w-[800px] h-[626px] mx-auto items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -249,7 +201,9 @@ const Header = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className={`relative ${activeRegButton === false ? 'mt-32' :'mt-0'}   transform  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
+                  className={`relative ${
+                    activeRegButton === false ? "mt-36" : "mt-0"
+                  }  scroll-m-2 transform scrollbar-hide  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
                 >
                   <div
                     onClick={() => setIsOpen(false)}
@@ -263,7 +217,7 @@ const Header = () => {
                       onClick={() => setActiveRegButton(true)}
                       className={`w-[370px] ${
                         activeRegButton ? "bg-[#f5f5f5]" : ""
-                      } outline-none text-[#484848] font-bold text-[16px]  h-[70px] capitalize  rounded-tl-[6px] rounded-tr-[6px]`}
+                      } outline-none text-[#484848] font-bold text-[16px]  h-[70px] capitalize  rounded-tl-[6px] rounded-tr-[6px] transition duration-150 ease-in-out`}
                     >
                       login
                     </button>
@@ -272,7 +226,7 @@ const Header = () => {
                       onClick={() => setActiveRegButton(false)}
                       className={` ${
                         activeRegButton === false ? "bg-[#f5f5f5]" : ""
-                      } w-[370px] text-[#484848] font-bold text-[18px]  h-[70px] capitalize  `}
+                      } w-[370px] text-[#484848] font-bold text-[18px]  h-[70px] capitalize  transition duration-150 ease-in-out  rounded-tl-[6px] rounded-tr-[6px]`}
                     >
                       register
                     </button>
@@ -309,7 +263,7 @@ const Header = () => {
                           <RegSocialButton
                             title="Login with Google"
                             color="text-[#dd4b39] "
-                            backgroundColor="bg-[#dd4b39]"
+                            backgroundColor=""
                             borderColor="border-[#dd4b39]"
                             icon={<FaGoogle size={13} />}
                           />
@@ -376,7 +330,7 @@ const Header = () => {
                           </div>
 
                           <div>
-                            <p className="text-[14px] leading-[24px] font-medium text-[#8b91dd]">
+                            <p className="text-[14px] cursor-pointer leading-[24px] font-medium text-[#8b91dd]">
                               Lost your password?
                             </p>
                           </div>
@@ -430,7 +384,7 @@ const Header = () => {
                           <RegSocialButton
                             title="Login with Google"
                             color="text-[#dd4b39] "
-                            backgroundColor="bg-[#dd4b39]"
+                            backgroundColor=""
                             borderColor="border-[#dd4b39]"
                             icon={<FaGoogle size={13} />}
                           />
@@ -526,18 +480,6 @@ const Header = () => {
                             </div>
                           )}
                         </div>
-                        {/* <div className=" mb-[27px] relative">
-                          <RegInput
-                            placeholder="User Name Or Email"
-                            onChange={(e) => setEmail(e!.target.value)}
-                          />
-
-                          {email.length === 0 && (
-                            <div className="absolute top-4 right-4">
-                              <RxPerson size={18} color="#006c70" />
-                            </div>
-                          )}
-                        </div> */}
 
                         <div className=" w-full">
                           <Listbox value={selected} onChange={setSelected}>
@@ -564,7 +506,7 @@ const Header = () => {
                                     <Listbox.Option
                                       key={userId}
                                       className={({ active }) =>
-                                        `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                        `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
                                           active
                                             ? "text-[#3270fc]"
                                             : "text-gray-900"

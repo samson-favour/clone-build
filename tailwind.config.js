@@ -11,5 +11,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    require("@tailwindcss/forms"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
 };

@@ -29,7 +29,7 @@ const Footer = () => {
         <p>Join Now</p>
       </div>
       <div className="space-y-4 text-xs text-[#144273]">
-        <h5 className="font-bold text-[#566985]">SUPPORT</h5>
+        <h5 className="font-bold text-[#566985] ">SUPPORT</h5>
         <p>Help Center</p>
         <p>Trust & Safety</p>
         <p>Say Hi YouTube</p>

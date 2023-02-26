@@ -13,7 +13,7 @@ const RegSocialButton = ({
     <button
       type="button"
       className={`${color}  border ${borderColor} ${
-        backgroundColor ? `hover:${backgroundColor}` : "hover:bg-[#dd4b39]"
+        backgroundColor ? `hover:bg-[#506dab]` : "hover:bg-[#dd4b39]"
       }  hover:text-white transition duration-150 ease-out rounded-[8px] h-[52px] mb-[20px] pl-[16px] flex w-full`}
     >
       <span className="my-auto mt-4 ">{icon}</span>
