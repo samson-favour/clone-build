@@ -23,6 +23,7 @@ import Datepicker from "react-tailwindcss-datepicker";
 import DateRanpicker from "../components/DateRanpicker";
 import logo from "../assets/ogle-color-logo.png";
 import { useRouter } from "next/router";
+import Link from "next/link";
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
@@ -79,7 +80,7 @@ const Header = () => {
 
       <div className="shadow-lg ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
         <div>
-        <SearchInput />
+          <SearchInput />
           {/* <input
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
@@ -99,6 +100,7 @@ const Header = () => {
             toggleClassName="border-none focus:ring-0 focus:border-none"
             showShortcuts={false}
             minDate={d}
+            placeholder={"Check In - Check Out"}
           />
         </div>
 
@@ -111,6 +113,7 @@ const Header = () => {
             toggleClassName="border-none focus:ring-0 focus:border-none"
             showShortcuts={false}
             minDate={d}
+            placeholder={"Check In - Check Out"}
           />
         </div>
         <div className="h-6 w-[1px]  bg-gray-300" />
@@ -133,7 +136,9 @@ const Header = () => {
         </div>
       </div>
       <div className="lg:flex hidden text-gray-500 space-x-4 items-center justify-end">
-        <p className="hidden md:inline cursor-pointer">Become a host</p>
+        <p className="hidden md:inline cursor-pointer">
+          <Link href="/create-listing">Become a host</Link>
+        </p>
         <GlobeAltIcon className="h-6 cursor-pointer" />
         <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
           <MenuIcon className="h-6" />
