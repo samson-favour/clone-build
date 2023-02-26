@@ -248,7 +248,9 @@ const Header = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className=" relative mt-32  transform  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel
+                  className={`relative ${activeRegButton === false ? 'mt-32' :'mt-0'}   transform  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
+                >
                   <div
                     onClick={() => setIsOpen(false)}
                     className="absolute cursor-pointer -right-4 -top-5 z-50 w-[50px] flex items-center justify-center h-[50px] bg-[#3270fc] rounded-full "
