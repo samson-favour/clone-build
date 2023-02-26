@@ -1,6 +1,5 @@
 import React from "react";
-import  ThemeToggler from './ThemeToggler'
-
+import ThemeToggler from "./ThemeToggler";
 
 const Footer = () => {
   return (
@@ -37,7 +36,9 @@ const Footer = () => {
         <p>Easter Eggs</p>
         <p>For the Win</p>
       </div>{" "}
-      {/* <ThemeToggler /> */}
+      <div className="hidden">
+        <ThemeToggler />
+      </div>
     </div>
   );
 };
