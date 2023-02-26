@@ -114,7 +114,7 @@ const Header = () => {
       </div>
       <div className="w-full border-b-#3270FC border-b" />
    
-      <header className="sticky top-0 z-50  flex items-center justify-center  sm:justify-between bg-white shadow-md p-4 md:px-10">
+      <header className="sticky top-0 z-50  flex items-center justify-center  sm:justify-between bg-white shadow-md p-4 md:px-5">
         <div
           onClick={() => {
             router.push("/");
