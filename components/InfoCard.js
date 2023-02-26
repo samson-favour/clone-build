@@ -12,6 +12,8 @@ const InfoCard = ({
   star,
   price,
 }) => {
+
+  
   return (
     <div className="flex flex-col sm:flex-row  py-7 px-2 border-b cursor-pointer hover:opacity-80 hover:shadow-lg pr-4 transition duration-200 ease-out first:border-t ">
       <div className="relative h-40 w-full  sm:h-40 sm:w-64 md:h-52 md:w-80 flex flex-shrink-0">

@@ -7,6 +7,8 @@ import Moment from "moment";
 import InfoCard from "../components/InfoCard";
 import MapView from "../components/Map";
 const Search = ({ searchResult }: any) => {
+
+  
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
 
