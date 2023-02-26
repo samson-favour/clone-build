@@ -202,7 +202,7 @@ const Header = () => {
               >
                 <Dialog.Panel
                   className={`relative ${
-                    activeRegButton === false ? "mt-36" : "mt-0"
+                    activeRegButton === false ? "mt-32" : "mt-0"
                   }  scroll-m-2 transform scrollbar-hide  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
                 >
                   <div
