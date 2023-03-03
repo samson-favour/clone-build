@@ -7,10 +7,12 @@ const RegSocialButton = ({
   title,
   backgroundColor,
   icon,
-  borderColor
+  borderColor,
+  onClick,
 }: RegBtnSocialProps) => {
   return (
     <button
+      onClick={onClick}
       type="button"
       className={`${color}  border ${borderColor} ${
         backgroundColor ? `hover:bg-[#506dab]` : "hover:bg-[#dd4b39]"

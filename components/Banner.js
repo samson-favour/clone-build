@@ -17,7 +17,7 @@ const Banner = () => {
           <p className="text-sm text-white sm:text-lg">
             Not sure where to go? Perfect.
           </p>
-          <button className="text-white bg-[#3270FC] px-10 py-4 shadow-md rounded-full cursor-pointer font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">
+          <button className="text-white bg-[#3270FC] px-10 py-3 shadow-md rounded-full cursor-pointer font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">
             Get Started
           </button>
         </div>

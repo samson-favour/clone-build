@@ -4,4 +4,5 @@ export interface RegBtnSocialProps {
   backgroundColor: string;
   borderColor: string;
   icon: any;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

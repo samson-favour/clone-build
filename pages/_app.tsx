@@ -2,7 +2,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import ProgressBar from "@badrap/bar-of-progress";
+import { Provider } from "react-redux";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
+import store from "../store";
+import "../public/assets/scss/components/index.scss";
+import Seo from "../components/common/seo";
 
 const progress = new ProgressBar({
   size: 4,
@@ -17,9 +22,19 @@ Router.events.on("routeChangeError", progress.finish);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider enableSystem={false} attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={pageProps.session}>
+      <Seo
+        pageTitle=""
+        font={
+          "https://fonts.googleapis.com/css?family=Nunito:400,400i,500,600,700&display=swap"
+        }
+      />
+      <Provider store={store}>
+        <ThemeProvider enableSystem={false} attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
+    </SessionProvider>
   );
 }
 

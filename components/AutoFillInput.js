@@ -15,8 +15,7 @@ const AutoFillInput = () => {
         placeholder="Location"
         name="address"
         type="text"
-        autoComplete="street-address"
-        className="max-w-[130px] rounded-full focus:border-none focus:ring-0 flex-shrink flex border-none overflow-hidden"
+        className="max-w-[100px] rounded-full focus:border-none focus:ring-0 flex-shrink flex border-none overflow-hidden"
       />
     </AddressAutofill>
   );
