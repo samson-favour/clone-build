@@ -2,6 +2,8 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { logout } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 
 import {
   ChevronDownIcon,
@@ -92,7 +94,7 @@ export default function ProfileDropdown() {
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    onClick={() => dispatch(logout())}
+                    onClick={() => signOut()}
                     className={`${
                       active ? "bg-[#3270fcff] text-white" : "text-gray-900"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
