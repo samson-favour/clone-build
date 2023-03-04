@@ -287,7 +287,7 @@ const Header = () => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto scrollbar-hide">
-              <div className="flex scrollbar-hide z-50  max-w-[789px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
+              <div className="flex scrollbar-hide z-50  max-w-[800px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -312,7 +312,7 @@ const Header = () => {
                         onClick={() => setActiveRegButton(true)}
                         className={`w-[370px] ${
                           activeRegButton ? "bg-[#f5f5f5]" : ""
-                        } outline-none text-[#484848] font-bold text-[16px]  h-[70px] capitalize  rounded-tl-[6px] rounded-tr-[6px] transition duration-150 ease-in-out`}
+                        } outline-none text-[#484848] font-bold text-[16px]  min-h-[70px] capitalize  rounded-tl-[6px] rounded-tr-[6px] transition duration-150 ease-in-out`}
                       >
                         login
                       </button>
@@ -321,7 +321,7 @@ const Header = () => {
                         onClick={() => setActiveRegButton(false)}
                         className={` ${
                           activeRegButton === false ? "bg-[#f5f5f5]" : ""
-                        } w-[370px] text-[#484848] font-bold text-[18px]  h-[70px] capitalize  transition duration-150 ease-in-out  rounded-tl-[6px] rounded-tr-[6px]`}
+                        } w-[370px] text-[#484848] font-bold text-[18px]  min-h-[70px] capitalize  transition duration-150 ease-in-out  rounded-tl-[6px] rounded-tr-[6px]`}
                       >
                         register
                       </button>
