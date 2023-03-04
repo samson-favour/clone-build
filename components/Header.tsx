@@ -57,7 +57,7 @@ const Header = () => {
 
   console.log(userInfo);
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch();
   console.log(error);
 
   const {
