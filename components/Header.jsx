@@ -357,7 +357,7 @@ const Header = () => {
 
                             <RegSocialButton
                               onClick={() =>
-                                signIn("", {
+                                signIn("google", {
                                   callbackUrl: "/",
                                 })
                               }
