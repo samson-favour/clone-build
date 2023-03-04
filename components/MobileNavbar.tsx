@@ -14,7 +14,7 @@ const MobileNavbar = ({ mobileNav, handleNav }: MobileNavbarProps) => {
     <div
       className={
         mobileNav
-          ? "xl:hidden fixed left-0 top-0 w-full z-[900]  h-full bg-black/70 transition ease-linear duration-500"
+          ? "xl:hidden fixed left-0 top-0 w-full z-[900]  h-full bg-black/40 transition ease-linear duration-500"
           : ""
       }
     >

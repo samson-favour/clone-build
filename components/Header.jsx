@@ -287,7 +287,7 @@ const Header = () => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto scrollbar-hide">
-              <div className="flex scrollbar-hide z-50 min-h-full max-w-[800px] h-[626px] mx-auto items-center justify-center p-4 text-center">
+              <div className="flex scrollbar-hide z-50  max-w-[800px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -298,9 +298,7 @@ const Header = () => {
                   leaveTo="opacity-0 scale-95"
                 >
                   <Dialog.Panel
-                    className={`relative ${
-                      activeRegButton === false ? "mt-36" : "mt-0"
-                    }  scroll-m-2 transform scrollbar-hide  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
+                    className={`relative scroll-m-2 transform scrollbar-hide  rounded-[8px] bg-white pl-[30px] pr-[30px] pt-4 pb-5 text-left align-middle shadow-xl transition-all`}
                   >
                     <div
                       onClick={() => setIsOpen(false)}
