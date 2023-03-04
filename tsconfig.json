@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/Header.tsx", "features/auth/authActions.js"  ],
+, "components/Header.jsx", "features/auth/authActions.js"  ],
   "exclude": [
     "node_modules"
   ]

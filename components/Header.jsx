@@ -52,7 +52,7 @@ const Header = () => {
   const { data: session } = useSession();
 
   const { loading, userInfo, error, success } = useSelector(
-    (state: any) => state.auth
+    (state) => state.auth
   );
 
   console.log(userInfo);
@@ -66,12 +66,12 @@ const Header = () => {
     formState: { errors },
   } = useForm();
 
-  const registerForm = (data:any) => {
+  const registerForm = (data) => {
     data.role = selected.name;
     if (data.password !== data.confirmPassword) {
       alert("Password mismatch");
     }
-    dispatch(registerUser(data))
+    dispatch(registerUser(data));
 
     console.log(data);
   };
@@ -123,7 +123,7 @@ const Header = () => {
   let d = new Date();
   d.setDate(d.getDate() - 1);
 
-  const handleValueChange = (newValue: any) => {
+  const handleValueChange = (newValue) => {
     setValue(newValue);
   };
 
@@ -379,7 +379,7 @@ const Header = () => {
                                 register={register}
                                 name="email"
                                 placeholder="User Name Or Email"
-                                onChange={(e) => setEmail(e!.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
 
                               {email.length === 0 && (
@@ -393,7 +393,7 @@ const Header = () => {
                                 register={register}
                                 name="password"
                                 placeholder="Password"
-                                onChange={(e) => setPassword(e!.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                               />
 
                               {password.length === 0 && (
@@ -504,7 +504,7 @@ const Header = () => {
                                 register={register}
                                 name="username"
                                 placeholder="User Name"
-                                onChange={(e) => setEmail(e!.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
 
                               {email.length === 0 && (
@@ -519,7 +519,7 @@ const Header = () => {
                                 register={register}
                                 name="email"
                                 placeholder="Email"
-                                onChange={(e) => setEmail(e!.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
 
                               {email.length === 0 && (
@@ -533,7 +533,7 @@ const Header = () => {
                                 register={register}
                                 name="password"
                                 placeholder="Password"
-                                onChange={(e) => setPassword(e!.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                               />
 
                               {password.length === 0 && (
@@ -567,7 +567,7 @@ const Header = () => {
                                 register={register}
                                 name="confirmPassword"
                                 placeholder="Re-Enter Password"
-                                onChange={(e) => setPassword(e!.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                               />
 
                               {password.length === 0 && (
