@@ -12,7 +12,7 @@ module.exports = {
     GOOGLE_CLIENT_ID:
       "543078423507-22ebbs5qjqo3a7blgq9cvkldi18353fh.apps.googleusercontent.com",
     GOOGLE_CLIENT_SECRET: "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",
-    NEXTAUTH_URL: "http://locahost:3001",
+    NEXTAUTH_URL: "https://ogle.netlify.app/",
     JWT_SECRET: "de2b429805c96302d77595caffcbf218",
   },
   async rewrites() {
