@@ -178,9 +178,10 @@ const Header = () => {
 
         <div
           onClick={handleNav}
-          className="transition ease-in-out duration-500"
+          className="transition  ease-in-out duration-500"
         >
-          <FaBars size={24} color="#3270FC" />
+          {/* <FaBars size={24} color="#3270FC" /> */}
+          <ProfileDropdown />
         </div>
 
         {mobileNav && (
@@ -265,10 +266,7 @@ const Header = () => {
             Become a host
           </p>
           <GlobeAltIcon className="h-6 cursor-pointer" />
-          {/* <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
-            <MenuIcon className="h-6" />
-            <UserCircleIcon className="h-6" />
-          </div> */}
+
           <ProfileDropdown />
         </div>
 

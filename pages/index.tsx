@@ -5,8 +5,9 @@ import Banner from "../components/Banner";
 import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
+import CopyrightFooter from "../components/common/footer/CopyrightFooter";
+import Footer from "../components/common/footer/Footer";
 
 const Home: NextPage = ({ exploreData, cardData }: any) => {
   return (
@@ -14,8 +15,6 @@ const Home: NextPage = ({ exploreData, cardData }: any) => {
       <Head>
         <title>Airbnb clone</title>
         <link rel="icon" href="/favicon.ico" />
-
-       
       </Head>
 
       <Header />
@@ -52,8 +51,20 @@ const Home: NextPage = ({ exploreData, cardData }: any) => {
           buttonText="Get Inspired"
         />
       </main>
+      <section className="footer_one">
+        <div className="container">
+          <div className="row">
+            <Footer />
+          </div>
+        </div>
+      </section>
 
-      <Footer />
+      {/* <!-- Our Footer Bottom Area --> */}
+      <section className="footer_middle_area pt40 pb40">
+        <div className="container">
+          <CopyrightFooter />
+        </div>
+      </section>
     </div>
   );
 };

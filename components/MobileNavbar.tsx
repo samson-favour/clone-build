@@ -14,15 +14,15 @@ const MobileNavbar = ({ mobileNav, handleNav }: MobileNavbarProps) => {
     <div
       className={
         mobileNav
-          ? "xl:hidden fixed left-0 top-0 w-full z-[900]  h-full bg-black/40 transition ease-linear duration-500"
-          : ""
+          ? "xl:hidden fixed left-[-100%] top-0 w-full z-[900]  h-full bg-black/40  translate-x-full transition-all  ease-linear duration-500"
+          : "translate-x-0 transition"
       }
     >
       <div
         className={
           mobileNav
-            ? "xl:hidden fixed left-0 top-0 w-[80%]  min-h-full  bg-white p-8"
-            : "fixed left-[-100%] top-0 p-8 transition ease-linear duration-500"
+            ? "xl:hidden fixed left-[-80%]  w-[80%]  transition ease-in-out translate-x-full duration-500  min-h-full  bg-white p-8"
+            : "translate-x-0"
         }
       >
         <div className="min-h-full ">
@@ -46,8 +46,58 @@ const MobileNavbar = ({ mobileNav, handleNav }: MobileNavbarProps) => {
           </div>
 
           <div className="flex mt-5 ">
-            <ul className="flex flex-col  space-y-8">
-              <div className="ml-[16px] w-[25px] "></div>
+            <ul className="flex flex-col  space-y-5">
+              {/* <div className="ml-[16px] w-[25px] "></div> */}
+              <li className="flex ">
+                <Link
+                  href="/"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="flex ">
+                <Link
+                  href="/"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Listing
+                </Link>
+              </li>
+              <li className="flex ">
+                <Link
+                  href="/"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Property
+                </Link>
+              </li>
+              <li className="flex ">
+                <Link
+                  href="/"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li className="flex space-x-2">
+                <span className="flaticon-user"></span>
+                <Link
+                  href="/login"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="flex space-x-2">
+                <span className="flaticon-edit"></span>
+                <Link
+                  href="/register"
+                  className="hover:text-[#475569] text-[#9CA3AF] text-[16px] dark:text-white font-euclidMedium"
+                >
+                  Register
+                </Link>
+              </li>
               {/* {navLinks.map((link) => (
                     <li key={link.id} className="flex ">
                       <Link href="/">

@@ -4,22 +4,22 @@ import { logout } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-
 import {
   ChevronDownIcon,
   MenuIcon,
   UserCircleIcon,
 } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 
 export default function ProfileDropdown() {
   // const { loading, userInfo, error, success } = useSelector(
   //   (state) => state.auth
   // );
 
- // console.log(state.auth);
+  // console.log(state.auth);
+  const router = useRouter();
 
   const dispatch = useDispatch();
-
 
   return (
     <div className="">
@@ -46,6 +46,9 @@ export default function ProfileDropdown() {
               <Menu.Item>
                 {({ active }) => (
                   <button
+                    onClick={() => {
+                      router.push("/register");
+                    }}
                     className={`${
                       active ? "bg-[#3270fcff] text-white" : "text-gray-900"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -57,6 +60,9 @@ export default function ProfileDropdown() {
               <Menu.Item>
                 {({ active }) => (
                   <button
+                    onClick={() => {
+                      router.push("/login");
+                    }}
                     className={`${
                       active ? "bg-[#3270fcff] text-white" : "text-gray-900"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
