@@ -153,14 +153,14 @@ const Header = () => {
     });
   };
 
-  if (session) {
-    return (
-      <div>
-        <p>Welcome, {session.user?.email}</p>
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    );
-  }
+  // if (session) {
+  //   return (
+  //     <div>
+  //       <p>Welcome, {session.user?.email}</p>
+  //       <button onClick={() => signOut()}>Sign out</button>
+  //     </div>
+  //   );
+  // }
   return (
     <>
       <div className="flex px-3 pt-3 pb-2 justify-between items-center sm:hidden">
@@ -358,7 +358,7 @@ const Header = () => {
                             <RegSocialButton
                               onClick={() =>
                                 signIn("google", {
-                                  callbackUrl: "/",
+                                  callbackUrl: "/my-dashboard",
                                 })
                               }
                               title="Login with Google"
