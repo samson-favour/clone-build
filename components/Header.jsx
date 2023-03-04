@@ -189,7 +189,7 @@ const Header = () => {
       </div>
       <div className="w-full border-b-#3270FC border-b" />
 
-      <header className="sticky top-0 z-50  flex items-center justify-center  sm:justify-between bg-white shadow-md p-4 md:px-5">
+      <header className="sticky top-0 z-50  flex items-center justify-center  sm:justify-between bg-white shadow-md min-h-[82px] md:px-5">
         <div
           onClick={() => {
             router.push("/");
@@ -207,7 +207,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="shadow-lg ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
+        <div className="shadow-md ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
           <div>
             <SearchInput />
           </div>
@@ -260,7 +260,7 @@ const Header = () => {
         <div className="sm:flex hidden text-gray-500 space-x-4 items-center justify-end">
           <p
             onClick={openModal}
-            className="hidden md:inline cursor-pointer  text-[#3270FC] transition transform ease-out duration-300"
+            className="hidden md:inline cursor-pointer mt-[12px]  text-[#3270FC] transition transform ease-out duration-300"
           >
             Become a host
           </p>
