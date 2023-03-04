@@ -287,7 +287,7 @@ const Header = () => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto scrollbar-hide">
-              <div className="flex scrollbar-hide z-50  max-w-[800px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
+              <div className="flex scrollbar-hide z-50  max-w-[789px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
