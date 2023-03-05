@@ -15,7 +15,7 @@ const index = () => {
 
       <BreadCrumbBanner />
 
-      <section className="our-log bgc-fa">
+      <section className="our-log bgc-fa ">
         <div className="container">
           <div className="row  ">
             <div className="col-sm-12 col-lg-6 offset-lg-3">

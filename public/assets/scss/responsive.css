@@ -1009,9 +1009,7 @@
 	.home4_overlay::before {
 		top: -75px;
 	}
-	.inner_page_breadcrumb {
-		margin-top: -95px;
-	}
+	
 	.checkout_form .checkout_coupon form input,
 	.checkout_form .checkout_coupon form button.btn2 {
 		margin-right: 15px;

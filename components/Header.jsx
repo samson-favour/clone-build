@@ -55,7 +55,7 @@ const Header = () => {
     (state) => state.auth
   );
 
-  console.log(userInfo);
+ 
 
   const dispatch = useDispatch();
   console.log(error);
@@ -163,7 +163,7 @@ const Header = () => {
   // }
   return (
     <>
-      <div className="flex px-3 pt-3 pb-2 justify-between items-center sm:hidden">
+      <div className="flex px-3 pt-3 pb-2 justify-between z-[600] h-[82px] items-center sm:hidden">
         <div>
           <Image
             alt="image"
@@ -190,7 +190,7 @@ const Header = () => {
       </div>
       <div className="w-full border-b-#3270FC border-b" />
 
-      <header className="sticky top-0 z-50  flex items-center justify-center  sm:justify-between bg-white shadow-md min-h-[82px] md:px-5">
+      <header className="sticky top-0 z-[600]  flex items-center justify-center  sm:justify-between bg-white shadow-md h-[82px] md:px-5">
         <div
           onClick={() => {
             router.push("/");
@@ -208,7 +208,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="shadow-md ml-0 xl:ml-16   bg-white rounded-full flex items-center justify-between  border border-gray-50">
+        <div className="shadow-md ml-0 xl:ml-16 mx-2 sm:mx-0 bg-white rounded-full flex items-center justify-between  border border-gray-50">
           <div>
             <SearchInput />
           </div>
@@ -346,6 +346,11 @@ const Header = () => {
 
                           <div className="mt-6">
                             <RegSocialButton
+                              onClick={() =>
+                                signIn("facebook", {
+                                  callbackUrl: "/my-dashboard",
+                                })
+                              }
                               title="Login with Facebook"
                               color="text-[#506dab] "
                               backgroundColor="bg-[#506dab]"
@@ -476,6 +481,11 @@ const Header = () => {
 
                           <div className="mt-6">
                             <RegSocialButton
+                              onClick={() =>
+                                signIn("facebook", {
+                                  callbackUrl: "/my-dashboard",
+                                })
+                              }
                               title="Login with Facebook"
                               color="text-[#506dab] "
                               backgroundColor="bg-[#506dab]"
@@ -484,6 +494,11 @@ const Header = () => {
                             />
 
                             <RegSocialButton
+                              onClick={() =>
+                                signIn("google", {
+                                  callbackUrl: "/my-dashboard",
+                                })
+                              }
                               title="Login with Google"
                               color="text-[#dd4b39] "
                               backgroundColor=""

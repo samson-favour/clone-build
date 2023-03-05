@@ -9994,16 +9994,19 @@ form.home5_advanced_search_form
 
 /*== Inner Pages Breadcrumb ==*/
 .inner_page_breadcrumb {
-  background-image: url(../images/background/inner-pagebg.jpg);
+background-image: url(../images/background/inner-pagebg.jpg);  
   background-repeat: no-repeat;
+  
   height: 370px;
   position: relative;
 }
 @media (max-width: 576px) {
   .inner_page_breadcrumb {
     height: 350px;
+    
   }
 }
+
 
 .inner_page_breadcrumb:before {
   background-color: rgb(29, 41, 62);
@@ -10016,6 +10019,11 @@ form.home5_advanced_search_form
   top: 0;
 }
 
+  /* @media (max-width: 576px) {
+    .inner_page_breadcrumb:before  {
+       top: 20px;
+    }
+  } */
 .inner_page_breadcrumb .breadcrumb_content {
   margin-top: 85px;
   position: relative;
