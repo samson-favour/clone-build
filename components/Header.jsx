@@ -163,7 +163,7 @@ const Header = () => {
   // }
   return (
     <>
-      <div className="flex px-3 pt-3 pb-2 justify-between z-[600] h-[82px] items-center sm:hidden">
+      <div className="flex px-3 pt-3 pb-2 justify-between z-[60] h-[82px] items-center sm:hidden">
         <div>
           <Image
             alt="image"
@@ -190,7 +190,7 @@ const Header = () => {
       </div>
       <div className="w-full border-b-#3270FC border-b" />
 
-      <header className="sticky top-0 z-[600]  flex items-center justify-center  sm:justify-between bg-white shadow-md h-[82px] md:px-5">
+      <header className="sticky top-0 z-[60]  flex items-center justify-center  sm:justify-between bg-white shadow-md h-[82px] md:px-5">
         <div
           onClick={() => {
             router.push("/");
@@ -271,7 +271,7 @@ const Header = () => {
         </div>
 
         <Transition appear show={isOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-50  " onClose={closeModal}>
+          <Dialog as="div" className="relative z-[70]  " onClose={closeModal}>
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -285,7 +285,7 @@ const Header = () => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto scrollbar-hide">
-              <div className="flex scrollbar-hide z-50  max-w-[800px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
+              <div className="flex scrollbar-hide z-[70]  max-w-[800px] mt-3 min-h-[626px] mx-auto items-center justify-center p-4 text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
