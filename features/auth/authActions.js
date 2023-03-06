@@ -22,10 +22,11 @@ export const registerUser =
           config
         );
       } catch (error) {
+        console.log(error);
         if (error.response && error.response.data.message) {
           return rejectWithValue(error.response.data.message);
         } else {
-          return rejectWithValue(error.message);
+          return rejectWithValue(error?.response);
         }
       }
     }
@@ -43,15 +44,16 @@ export const userLogin = createAsyncThunk(
       const { data } = await axios.post(
         `${backendURL}/auth/login`,
         { email, password },
-        config
+        // config
       );
       localStorage.setItem("userToken", data.token);
       return data;
     } catch (error) {
+      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
-        return rejectWithValue(error.message);
+        return rejectWithValue(error?.response);
       }
     }
   }

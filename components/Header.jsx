@@ -79,9 +79,9 @@ const Header = () => {
   const loginForm = (data) => {
     dispatch(userLogin(data));
 
-    if (userInfo) {
-      router.push("/my-dashboard");
-    }
+     if (success) {
+       router.push("/my-dashboard");
+     }
   };
 
   useEffect(() => {

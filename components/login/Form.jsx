@@ -25,7 +25,7 @@ const Form = () => {
     dispatch(userLogin(data));
     console.log(data);
 
-    if (userInfo) {
+    if (success) {
       router.push("/my-dashboard");
     }
   };
