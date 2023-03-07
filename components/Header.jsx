@@ -181,11 +181,17 @@ const Header = () => {
           className="transition  ease-in-out duration-500"
         >
           {/* <FaBars size={24} color="#3270FC" /> */}
-          <ProfileDropdown />
+          <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
+            <MenuIcon className="h-6" />
+            <UserCircleIcon className="h-6" />
+          </div>
         </div>
 
         {mobileNav && (
-          <MobileNavbar mobileNav={mobileNav} handleNav={handleNav} />
+          <>
+           
+            <MobileNavbar mobileNav={mobileNav} handleNav={handleNav} />
+          </>
         )}
       </div>
       <div className="w-full border-b-#3270FC border-b" />
