@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import DateRanpicker from './DateRanpicker'
 
 const LargeCard = ({ img, title, description, buttonText }) => {
   return (

@@ -46,3 +46,10 @@ body {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(231, 231, 231, 0.918);
 }
+
+
+.auto-input{
+  overflow: hidden !important;
+  
+}
+

@@ -12,6 +12,7 @@ import { RxPerson } from "react-icons/rx";
 import { TiTimes } from "react-icons/ti";
 import { HiOutlineMail } from "react-icons/hi";
 import dynamic from "next/dynamic";
+import AutoCompleteInput from "../components/AutoCompleteInput";
 import {
   SearchIcon,
   GlobeAltIcon,
@@ -33,10 +34,6 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import MobileNavbar from "./MobileNavbar";
 import ProfileDropdown from "./ProfileDropdown";
 
-const SearchInput = dynamic(() => import("./AutoFillInput"), {
-  ssr: false,
-});
-
 const users = [
   { name: "Single User" },
   { name: "Agent" },
@@ -44,8 +41,20 @@ const users = [
 ];
 
 const Header = () => {
+  const [selected, setSelected] = useState(users[0]);
+  const [numOfGuests, setNumOfGuests] = useState("Guests");
+  const [activeRegButton, setActiveRegButton] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [mobileNav, setMobileNav] = useState(false);
 
+  let d = new Date();
+  d.setDate(d.getDate() - 1);
+  const [value, setValue] = useState({
+    startDate: d.setDate(d.getDate() - 1),
+    endDate: null,
+  });
   const handleNav = () => {
     setMobileNav(!mobileNav);
   };
@@ -54,8 +63,6 @@ const Header = () => {
   const { loading, userInfo, error, success } = useSelector(
     (state) => state.auth
   );
-
- 
 
   const dispatch = useDispatch();
   console.log(error);
@@ -79,59 +86,24 @@ const Header = () => {
   const loginForm = (data) => {
     dispatch(userLogin(data));
 
-     if (success) {
-       router.push("/my-dashboard");
-     }
+    if (success) {
+      router.push("/my-dashboard");
+    }
   };
 
   useEffect(() => {
-    // redirect user to login page if registration was successful
     if (success) {
       setActiveRegButton(true);
     }
-    // redirect authenticated user to profile screen
-    // if (userInfo) {
-    //   router.push("/dashboard")
-    // }
   }, [userInfo, success]);
 
-  //console.log(session);
-
-  const [searchInput, setSearchInput] = useState("");
-  // const [startDate, setStartDate] = useState(null);
-  // const [endDate, setEndtDate] = useState(null);
-  const [selected, setSelected] = useState(users[0]);
-  const [numOfGuests, setNumOfGuests] = useState("Guests");
-  const [activeRegButton, setActiveRegButton] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [value, setValue] = useState({
-    startDate: null,
-    endDate: null,
-  });
-
-  // const login = () => {
-  //   setActiveRegButton(true);
-  // };
-
-  // const register = () => {
-  //   setActiveRegButton(true);
-  // };
-
-  let d = new Date();
-  d.setDate(d.getDate() - 1);
+  let searchInput;
 
   const handleValueChange = (newValue) => {
     setValue(newValue);
   };
 
   const router = useRouter();
-  const resetInput = () => {
-    setSearchInput("");
-    setNumOfGuests("");
-  };
 
   function closeModal() {
     setIsOpen(false);
@@ -140,16 +112,16 @@ const Header = () => {
   function openModal() {
     setIsOpen(true);
   }
-
+  console.log("searchInput", searchInput);
   const search = () => {
     router.push({
       pathname: "/search",
-      // query: {
-      //   location: searchInput,
-      //   startDate: value.startDate.toISOString(),
-      //   endDate: value.endDate.toISOString(),
-      //   numOfGuests,
-      // },
+      query: {
+        location: searchInput,
+        startDate: value?.startDate,
+        endDate: value?.endDate,
+        numOfGuests,
+      },
     });
   };
 
@@ -176,6 +148,8 @@ const Header = () => {
           />
         </div>
 
+        {/* <AutoCompleteInput /> */}
+
         <div
           onClick={handleNav}
           className="transition  ease-in-out duration-500"
@@ -189,7 +163,6 @@ const Header = () => {
 
         {mobileNav && (
           <>
-           
             <MobileNavbar mobileNav={mobileNav} handleNav={handleNav} />
           </>
         )}
@@ -214,9 +187,9 @@ const Header = () => {
           />
         </div>
 
-        <div className="shadow-md ml-0 xl:ml-16 mx-2 sm:mx-0 bg-white rounded-full flex items-center justify-between  border border-gray-50">
+        <div className="shadow-md ml-0 xl:ml-16 mx-2 sm:mx-0 bg-white  rounded-full flex items-center justify-between  border border-gray-50">
           <div>
-            <SearchInput />
+            <AutoCompleteInput location={searchInput} />
           </div>
 
           <div className="h-6 w-[1px]  bg-gray-300" />

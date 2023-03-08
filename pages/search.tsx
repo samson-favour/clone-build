@@ -1,14 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "../components/Footer";
+import Footer from "../components/common/footer/Footer";
 import Header from "../components/Header";
 import Moment from "moment";
 import InfoCard from "../components/InfoCard";
 import MapView from "../components/Map";
+import CopyrightFooter from "../components/common/footer/CopyrightFooter";
 const Search = ({ searchResult }: any) => {
-
-  
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
 
@@ -58,8 +57,20 @@ const Search = ({ searchResult }: any) => {
           <MapView searchResults={searchResult} />
         </section>
       </main>
+      <section className="footer_one">
+        <div className="container">
+          <div className="row">
+            <Footer />
+          </div>
+        </div>
+      </section>
 
-      <Footer />
+      {/* <!-- Our Footer Bottom Area --> */}
+      <section className="footer_middle_area pt40 pb40">
+        <div className="container">
+          <CopyrightFooter />
+        </div>
+      </section>
     </div>
   );
 };
