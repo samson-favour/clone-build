@@ -8,6 +8,8 @@ import LargeCard from "../components/LargeCard";
 import Header from "../components/Header";
 import CopyrightFooter from "../components/common/footer/CopyrightFooter";
 import Footer from "../components/common/footer/Footer";
+import Search from "../components/Coder";
+import mockData from "../data/mockData";
 
 const Home: NextPage = ({ exploreData, cardData }: any) => {
   return (
@@ -51,6 +53,7 @@ const Home: NextPage = ({ exploreData, cardData }: any) => {
           buttonText="Get Inspired"
         />
       </main>
+      {/* <Search data={mockData} /> */}
       <section className="footer_one">
         <div className="container">
           <div className="row">

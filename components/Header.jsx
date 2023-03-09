@@ -13,6 +13,7 @@ import { TiTimes } from "react-icons/ti";
 import { HiOutlineMail } from "react-icons/hi";
 import dynamic from "next/dynamic";
 import AutoCompleteInput from "../components/AutoCompleteInput";
+import moment from "moment";
 import {
   SearchIcon,
   GlobeAltIcon,
@@ -33,6 +34,7 @@ import { FaBars } from "react-icons/fa";
 import { useSession, signIn, signOut } from "next-auth/react";
 import MobileNavbar from "./MobileNavbar";
 import ProfileDropdown from "./ProfileDropdown";
+import mockData from "../data/mockData";
 
 const users = [
   { name: "Single User" },
@@ -48,6 +50,8 @@ const Header = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobileNav, setMobileNav] = useState(false);
+  const [address, setAddress] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
   let d = new Date();
   d.setDate(d.getDate() - 1);
@@ -65,7 +69,6 @@ const Header = () => {
   );
 
   const dispatch = useDispatch();
-  console.log(error);
 
   const {
     register,
@@ -79,8 +82,6 @@ const Header = () => {
       alert("Password mismatch");
     }
     dispatch(registerUser(data));
-
-    console.log(data);
   };
 
   const loginForm = (data) => {
@@ -97,12 +98,10 @@ const Header = () => {
     }
   }, [userInfo, success]);
 
-  let searchInput;
-
   const handleValueChange = (newValue) => {
     setValue(newValue);
   };
-
+  console.log("nevalue", value, "address", address, "numOfGuests", numOfGuests);
   const router = useRouter();
 
   function closeModal() {
@@ -112,27 +111,35 @@ const Header = () => {
   function openModal() {
     setIsOpen(true);
   }
-  console.log("searchInput", searchInput);
+
   const search = () => {
     router.push({
       pathname: "/search",
       query: {
-        location: searchInput,
+        location: address,
         startDate: value?.startDate,
         endDate: value?.endDate,
         numOfGuests,
       },
     });
+
+    const filteredEvents = mockData.filter((event) => {
+      const isLocationMatch =
+        address === "" || event.address?.includes(address);
+
+      const isDateMatch =
+        !value ||
+        (moment(event.date).isSameOrAfter(value.startDate) &&
+          moment(event.date).isSameOrBefore(value.endDate));
+
+      const isGuestsMatch =
+        numOfGuests === 0 || event.numOfGuests >= numOfGuests;
+
+      return isLocationMatch && isDateMatch && isGuestsMatch;
+    });
+    console.log("filteredEvents", filteredEvents);
   };
 
-  // if (session) {
-  //   return (
-  //     <div>
-  //       <p>Welcome, {session.user?.email}</p>
-  //       <button onClick={() => signOut()}>Sign out</button>
-  //     </div>
-  //   );
-  // }
   return (
     <>
       <div className="flex px-3 pt-3 pb-2 justify-between z-[60] h-[82px] items-center sm:hidden">
@@ -147,8 +154,6 @@ const Header = () => {
             }}
           />
         </div>
-
-        {/* <AutoCompleteInput /> */}
 
         <div
           onClick={handleNav}
@@ -189,7 +194,12 @@ const Header = () => {
 
         <div className="shadow-md ml-0 xl:ml-16 mx-2 sm:mx-0 bg-white  rounded-full flex items-center justify-between  border border-gray-50">
           <div>
-            <AutoCompleteInput location={searchInput} />
+            <AutoCompleteInput
+              address={address}
+              setAddress={setAddress}
+              suggestions={suggestions}
+              setSuggestions={setSuggestions}
+            />
           </div>
 
           <div className="h-6 w-[1px]  bg-gray-300" />

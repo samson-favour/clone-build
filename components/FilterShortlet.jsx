@@ -1,13 +1,15 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "../components/common/footer/Footer";
-import Header from "../components/Header";
+import Footer from "./common/footer/Footer";
+import Header from "./Header";
 import Moment from "moment";
-import InfoCard from "../components/InfoCard";
-import MapView from "../components/Map";
-import CopyrightFooter from "../components/common/footer/CopyrightFooter";
-const Search = ({ searchResult }: any) => {
+import InfoCard from "./InfoCard";
+import MapView from "./Map";
+import CopyrightFooter from "./common/footer/CopyrightFooter";
+const FilterShortlet = ({ filteredEvents }) => {
+  console.log("searchResult", filteredEvents);
+
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
 
@@ -47,14 +49,14 @@ const Search = ({ searchResult }: any) => {
             <p className="button"> More filters</p>
           </div>
           <div className="flex flex-col">
-            {searchResult.map((item: any) => (
-              <InfoCard {...item} key={item.title} />
+            {filteredEvents.map((item) => (
+              <InfoCard {...item} />
             ))}
           </div>
         </section>
 
         <section className="hidden xl:inline-flex xl:min-w-[600px]">
-          <MapView searchResults={searchResult} />
+          <MapView filteredEvents={filteredEvents} />
         </section>
       </main>
       <section className="footer_one">
@@ -75,16 +77,4 @@ const Search = ({ searchResult }: any) => {
   );
 };
 
-export async function getServerSideProps() {
-  const searchResult = await fetch("https://www.jsonkeeper.com/b/5NPS").then(
-    (res) => res.json()
-  );
-
-  return {
-    props: {
-      searchResult,
-    },
-  };
-}
-
-export default Search;
+export default FilterShortlet;

@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import useInput from "./useInput";
 
-const AutoCompleteInput = ({ location }) => {
-  const [value, setValue] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+const AutoCompleteInput = ({
+  setAddress,
+  setSuggestions,
+  address,
+  suggestions,
+}) => {
   console.log(suggestions);
 
   const handleChange = async (event) => {
-    setValue(event.target.value);
+    setAddress(event.target.value);
 
-   
     try {
       const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${event.target.value}.json?access_token=${process.env.mapbox_key}`;
       const response = await fetch(endpoint);
@@ -24,7 +25,7 @@ const AutoCompleteInput = ({ location }) => {
   return (
     <>
       <input
-        value={value}
+        value={address}
         className="max-w-[100px] p-1 capitalize outline-none rounded-full  focus:border-none focus:ring-0 flex-shrink flex border-none overflow-hidden"
         placeholder="location"
         onChange={handleChange}
@@ -38,7 +39,7 @@ const AutoCompleteInput = ({ location }) => {
                 className=""
                 key={index}
                 onClick={() => {
-                  setValue(suggestion.place_name);
+                  setAddress(suggestion.place_name);
                   setSuggestions([]);
                 }}
               >
